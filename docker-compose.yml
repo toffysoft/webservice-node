@@ -1,0 +1,29 @@
+version: "3.4"
+
+services:
+  example_redis:
+    container_name: example_redis
+    image: "bitnami/redis:5.0"
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      REDIS_DISABLE_COMMANDS: "FLUSHDB,FLUSHALL"
+    #    volumes:
+    #      - ./docker-volume/redis:/bitnami/redis/data
+    ports:
+      - "${REDIS_PORT}:6379"
+    expose:
+      - "${REDIS_PORT}"
+    restart: always
+  # mongo:
+  #   image: example_mongo
+  #   container_name: "mongo"
+  #   ports:
+  #     - "${MONGO_PORT}:27017"
+  #   expose:
+  #     - "${MONGO_PORT}"
+  #   volumes:
+  #     - "./docker-volume/mongo:/data/db"
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+  #     MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+  #   restart: always
