@@ -121,7 +121,7 @@ exports.login = async (req, res, next) => {
 exports.logout = async (req, res, next) => {
   const reqUser = req.user;
   try {
-    const user = await user.findOne({
+    const user = await User.findOne({
       _id: reqUser.sub,
     });
 
