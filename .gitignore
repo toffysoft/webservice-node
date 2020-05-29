@@ -105,3 +105,5 @@ dist
 
 docker-volume/redis/*
 !docker-volume/redis/.gitkeep
+docker-volume/mongo/*
+!docker-volume/mongo/.gitkeep
