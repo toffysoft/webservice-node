@@ -14,16 +14,16 @@ services:
     expose:
       - "${REDIS_PORT}"
     restart: always
-  # mongo:
-  #   image: example_mongo
-  #   container_name: "mongo"
-  #   ports:
-  #     - "${MONGO_PORT}:27017"
-  #   expose:
-  #     - "${MONGO_PORT}"
-  #   volumes:
-  #     - "./docker-volume/mongo:/data/db"
-  #   environment:
-  #     MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
-  #     MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
-  #   restart: always
+  mongo:
+    image: example_mongo
+    container_name: "mongo"
+    ports:
+      - "${MONGO_PORT}:27017"
+    expose:
+      - "${MONGO_PORT}"
+    volumes:
+      - "./docker-volume/mongo:/data/db"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    restart: always
